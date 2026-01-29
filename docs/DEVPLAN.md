@@ -19,6 +19,7 @@
 4. **Testing & UX verification**
    - Maintain BDD scenarios for primary use cases.
    - Record CLI/UX demos with VHS and keep README visuals updated.
+   - Validate TestFlight upload lanes and LLM demo flow in CI.
 5. **Release & distribution**
    - Tag release artifacts and publish GitHub Releases.
    - Upload TestFlight builds when credentials are configured.
@@ -52,6 +53,9 @@
 - **p7zip**: packaging support for CI artifacts.
 - **make/gmake**: build orchestration.
 - **fastlane / App Store Connect API**: TestFlight upload pipeline.
+- **VHS**: terminal capture for demo GIFs in CI.
+- **tmux**: run background CLI sessions during VHS recordings.
+- **OpenAI-compatible API**: LLM demo requests in CI (configured via `LLM_API_URL`).
 - **libvncserver**: core VNC server functionality.
 - **libjpeg-turbo / libpng**: image encoding/decoding for framebuffer output.
 - **OpenSSL**: TLS for secure WebSockets.

@@ -1,0 +1,33 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Run tests and upload a release build to TestFlight"
+  lane :testflight do
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
+      key_filepath: ENV["APP_STORE_CONNECT_API_KEY_PATH"],
+      in_house: false
+    )
+
+    scan(
+      project: "TrollVNC.xcodeproj",
+      scheme: "TrollVNC",
+      device: "iPhone 15",
+      clean: true
+    )
+
+    gym(
+      project: "TrollVNC.xcodeproj",
+      scheme: "TrollVNC",
+      export_method: "app-store",
+      output_directory: "build"
+    )
+
+    pilot(
+      api_key: api_key,
+      skip_waiting_for_build_processing: true,
+      skip_submission: true
+    )
+  end
+end
