@@ -1,14 +1,14 @@
 Prompt ID: prompts_ios_app_trollvnc-p00010-e1cc1d
-Timestamp: 2026-03-01T19:16:40.659656+00:00
+Timestamp: 2026-03-01T19:58:08.163413+00:00
 Source: discord
-Queue: guild-1353735964635435100-run-22550018723::prompt_queue::discord_1353735964635435100_1353735964635435100_1462902839331262636_realagicorp_iosapp_prompts_ios_app_trollvnc_1462902839331262636_json
+Queue: guild-1353735964635435100-run-22550927474::prompt_queue::discord_1353735964635435100_1353735964635435100_1462902839331262636_realagicorp_iosapp_prompts_ios_app_trollvnc_1462902839331262636_json
 Run: 1/1
 Content:
 Discord channel: prompts_ios_app_trollvnc
 Channel ID: 1462902839331262636
 Queue label: prompts_ios_app_trollvnc
 Messages aggregated: 7
-Available repository: realagiorganization/TrollVNC -> /tmp/repositories/realagiorganization--TrollVNC
+Available repository: realagiorganization/TrollVNC -> /tmp/repositories/realagiorganization_TrollVNC
 
 Discord channel: prompts_ios_app_trollvnc | ID: 1462902839331262636 | Reaction filter: :white_check_mark:
 
