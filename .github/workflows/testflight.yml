@@ -1,0 +1,46 @@
+name: TestFlight Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [release]
+
+jobs:
+  testflight:
+    runs-on: macos-14
+    if: ${{ secrets.APP_STORE_CONNECT_API_KEY != '' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.2"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Install fastlane
+        run: gem install fastlane
+
+      - name: Prepare App Store Connect API key
+        env:
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
+        run: |
+          mkdir -p fastlane
+          echo "$APP_STORE_CONNECT_API_KEY" | base64 --decode > fastlane/AuthKey.p8
+          echo "APP_STORE_CONNECT_API_KEY_PATH=$PWD/fastlane/AuthKey.p8" >> $GITHUB_ENV
+
+      - name: Build, test, and upload to TestFlight
+        env:
+          APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APP_STORE_CONNECT_TEAM_ID: ${{ secrets.APP_STORE_CONNECT_TEAM_ID }}
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+        run: fastlane ios testflight
+        working-directory: app/TrollVNC

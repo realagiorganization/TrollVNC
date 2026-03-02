@@ -1,0 +1,15 @@
+Prompt ID: prompts_ios_app_trollvnc-p00012-e1cc1d\nTimestamp: 2026-01-29T12:06:16.642436Z\nSource: discord\nQueue: 1810be93b1db46a2930d8bab4c33d4f4::prompt_queue::discord_1353735964635435100_1353735964635435100_1462902839331262636_realagicorp_iosapp_prompts_ios_app_trollvnc_1462902839331262636_json\nRun: 1/1\nContent:\nDiscord channel: prompts_ios_app_trollvnc\nChannel ID: 1462902839331262636\nQueue label: prompts_ios_app_trollvnc\nMessages aggregated: 7\nAttachments saved for execution (4): attachments/image-1fd1f.png, attachments/image-396ab.png, attachments/image-620fe.png, ... | mounted at .prompt_attachments/prompts_ios_app_trollvnc-p00012-e1cc1d\nAttachment locations:\n- image-1fd1f.png (194089 bytes) -> .prompt_attachments/prompts_ios_app_trollvnc-p00012-e1cc1d/image-1fd1f.png\n- image-396ab.png (121827 bytes) -> .prompt_attachments/prompts_ios_app_trollvnc-p00012-e1cc1d/image-396ab.png\n- image-620fe.png (165412 bytes) -> .prompt_attachments/prompts_ios_app_trollvnc-p00012-e1cc1d/image-620fe.png\n- image-6d21d.png (85104 bytes) -> .prompt_attachments/prompts_ios_app_trollvnc-p00012-e1cc1d/image-6d21d.png\n\nDiscord channel: prompts_ios_app_trollvnc | ID: 1462902839331262636 | Reaction filter: :white_check_mark:
+
+Messages with required reaction:
+[1] (2026-01-19T20:14:01.125+00:00 | realagiadmin_29264 | id=1462902943383556238) work in https://github.com/realagiorganization/TrollVNC
+[2] (2026-01-19T20:14:20.988+00:00 | realagiadmin_29264 | id=1462903026695278746) Develop GitHub actions that build test and deploy release version of app to TestFlight, add GitHub actions badges
+[3] (2026-01-22T08:25:57.853+00:00 | mermaid10121 | id=1463811919222935634) Add badges for each GitHub action to README and gif of ui testing
+[4] (2026-01-22T11:27:46.941+00:00 | realagiadmin_29264 | id=1463857675254370409) test/screenshot github pages website
+Attachments: image.png: /out/1353735964635435100/_media/image-396ab.png ; image.png: /out/1353735964635435100/_media/image-620fe.png ; image.png: /out/1353735964635435100/_media/image-1fd1f.png ; image.png: /out/1353735964635435100/_media/image-6d21d.png
+[5] (2026-01-25T20:21:44.117+00:00 | realagiadmin_29264 | id=1465079212506349802) Create DEVPLAN.md outlining steps for developing this project, mention there all external dependencies that leverage parts of functionality needed
+
+Create BDD test suite describing principal use cases
+
+Create GitHub actions launching BDD suite and add its badge to README. If behavior includes either console or UI / Web user interaction, record it with vhs action and post gif into README
+[6] (2026-01-27T21:26:41.66+00:00 | drybox | id=1465820335718007019) always_on_hint
+[7] (2026-01-29T09:28:48.91+00:00 | mermaid10121 | id=1466364451241463808) Write bdd test that uses encrypted uploaded into GitHub actions llm keys to make a request to installed via codex cli oh my opencode cli in tmux terminal, make sure that vhs tape of it is captured and presented in readme md by GitHub action separately\n

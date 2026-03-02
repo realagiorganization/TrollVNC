@@ -1,0 +1,13 @@
+TrollVNC CLI demo
+
+Usage:
+  trollvncserver -p 5901 -n "My iPhone" [options]
+
+Core options:
+  -p port       TCP port for VNC (default: 5901)
+  -n name       Desktop name shown to clients (default: TrollVNC)
+  -H port       Enable built-in HTTP server (0 disables)
+  -reverse host:port   Connect out to a listening viewer
+  -repeater id host:port  Connect out to an UltraVNC repeater
+
+See README.md for the full options list.

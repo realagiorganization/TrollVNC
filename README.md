@@ -4,9 +4,28 @@
 
 [<img width="150" src="https://docs.havoc.app/img/badges/get_square.svg" />][now-on-havoc]
 
+[![Build TrollVNC](https://github.com/realagiorganization/TrollVNC/actions/workflows/build.yml/badge.svg)](https://github.com/realagiorganization/TrollVNC/actions/workflows/build.yml)
+[![BDD Suite](https://github.com/realagiorganization/TrollVNC/actions/workflows/bdd.yml/badge.svg)](https://github.com/realagiorganization/TrollVNC/actions/workflows/bdd.yml)
+[![TestFlight Release](https://github.com/realagiorganization/TrollVNC/actions/workflows/testflight.yml/badge.svg)](https://github.com/realagiorganization/TrollVNC/actions/workflows/testflight.yml)
+[![VHS Demos](https://github.com/realagiorganization/TrollVNC/actions/workflows/vhs.yml/badge.svg)](https://github.com/realagiorganization/TrollVNC/actions/workflows/vhs.yml)
+
 TrollVNC is a VNC server for iOS devices, allowing remote access and control of the device’s screen.
 
 <img width="763" alt="screenshot tiny" src="https://github.com/user-attachments/assets/2d2cd457-a3d2-475a-b391-e3232d747f48" />
+
+## Demos
+
+**CLI walkthrough (VHS)**:
+
+![TrollVNC CLI demo](docs/vhs/trollvnc-demo.gif)
+
+**Opencode CLI LLM check (VHS)**:
+
+![Opencode CLI demo](docs/vhs/opencode-demo.gif)
+
+**GitHub Pages UI test capture**:
+
+![GitHub Pages UI](docs/assets/github-pages-ui.gif)
 
 ## Features
 
@@ -646,6 +665,26 @@ For advanced tuning (HTTP/TLS, wheel tuning, dirty detection, etc.), commit your
   - `dsym-default`, `dsym-rootless`, `dsym-roothide`, `dsym-bootstrap`
 - Download them from the run page → `Artifacts`.
 - If you push to the `release` branch (and the workflow runs there), a GitHub Release is created automatically with packaged files attached.
+
+### TestFlight Release (fastlane)
+
+The `TestFlight Release` workflow builds, tests, and uploads the iOS app via Fastlane when `release` is updated or when run manually.
+Set these GitHub secrets before running it:
+
+- `APP_IDENTIFIER`
+- `APP_STORE_CONNECT_API_KEY` (base64-encoded App Store Connect API key `.p8`)
+- `APP_STORE_CONNECT_API_KEY_ID`
+- `APP_STORE_CONNECT_API_ISSUER_ID`
+- `APPLE_TEAM_ID` (optional)
+- `APP_STORE_CONNECT_TEAM_ID` (optional)
+
+### VHS Demo Capture
+
+The `VHS Demos` workflow renders demo GIFs from `docs/vhs/*.tape`. To enable the opencode CLI capture, set:
+
+- `LLM_API_KEY`
+- `LLM_API_URL` (optional, defaults to OpenAI)
+- `LLM_API_MODEL` (optional, defaults to `gpt-4o-mini`)
 
 ## Build Dependencies
 

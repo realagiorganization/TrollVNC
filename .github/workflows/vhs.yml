@@ -1,0 +1,46 @@
+name: VHS Demos
+
+on:
+  push:
+    branches: [main, release]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  vhs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tmux
+        run: sudo apt-get update && sudo apt-get install -y tmux
+
+      - name: Install opencode CLI wrapper
+        run: sudo install -m 0755 scripts/opencode-cli.sh /usr/local/bin/opencode
+
+      - name: Render TrollVNC CLI demo
+        uses: charmbracelet/vhs-action@v2
+        with:
+          path: docs/vhs/trollvnc-demo.tape
+
+      - name: Render opencode CLI demo
+        if: ${{ secrets.LLM_API_KEY != '' }}
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        uses: charmbracelet/vhs-action@v2
+        with:
+          path: docs/vhs/opencode-demo.tape
+
+      - name: Upload demo gifs
+        uses: actions/upload-artifact@v4
+        with:
+          name: vhs-demos
+          path: docs/vhs/*.gif
+          if-no-files-found: warn
